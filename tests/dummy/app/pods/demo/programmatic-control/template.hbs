@@ -19,7 +19,7 @@
   <button class='btn btn-default' {{action 'togglePanelB'}}>Toggle Panel B</button>
 </div>
 
-{{#cp-panels name='group1' as |panels|}}
+{{#fcp-panels name='group1' as |panels|}}
 
   {{#panels.panel name='panelA' as |p|}}
     {{#p.toggle}}
@@ -43,7 +43,7 @@
     {{/p.body}}
   {{/panels.panel}}
 
-{{/cp-panels}}
+{{/fcp-panels}}
 {{!-- END-SNIPPET --}}
   </div>
 </div>

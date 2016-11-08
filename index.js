@@ -1,20 +1,19 @@
-/* jshint node: true */
-'use strict';
+'use strict'
 
-var fs = require('fs');
-var path = require('path');
+var fs = require('fs')
+var path = require('path')
 
 module.exports = {
-  name: 'ember-collapsible-panel',
+  name: 'ember-frost-collapsible-panel',
 
   config: function (env, baseConfig) {
-    var configPath = path.join(this.root, 'config', 'environment.js');
+    var configPath = path.join(this.root, 'config', 'environment.js')
 
     if (fs.existsSync(configPath)) {
-      var configGenerator = require(configPath);
+      var configGenerator = require(configPath)
 
-      return configGenerator(env, baseConfig, this);
+      return configGenerator(env, baseConfig, this)
     }
   }
 
-};
+}

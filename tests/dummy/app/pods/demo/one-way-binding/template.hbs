@@ -15,7 +15,7 @@
 
 <span>isOpen: {{isOpen}}</span>
 
-{{#cp-panel click=(action 'toggleIsOpen') open=isOpen as |p|}}
+{{#fcp-panel click=(action 'toggleIsOpen') open=isOpen as |p|}}
   {{#p.toggle}}
     <p>Click me!</p>
   {{/p.toggle}}
@@ -26,7 +26,7 @@
     </div>
   {{/p.body}}
 
-{{/cp-panel}}
+{{/fcp-panel}}
 {{!-- END-SNIPPET --}}
   </div>
 </div>
