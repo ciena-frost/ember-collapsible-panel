@@ -53,7 +53,7 @@ export default Component.extend(PropTypesMixin, {
   // == Events ================================================================
 
   click (e) {
-    e.preventDefa
+    e.preventDefault()
     this.onClick()
   },
 

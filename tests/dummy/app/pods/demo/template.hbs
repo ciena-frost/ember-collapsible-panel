@@ -7,7 +7,7 @@
     <br />
 
     <p>The 2.x series of Collapsible Panels relies on contextual components, a feature introduced in Ember 2.3.</p>
-    <p>If your app is on a version &lt; 2.3, install the 1.0 version of this library (with <code>ember install ember-collapsible-panel@1.0</code>).</p>
+    <p>If your app is on a version &lt; 2.3, install the 1.0 version of the original library (with <code>ember install ember-collapsible-panel@1.0</code>).</p>
 
     <br>
 
@@ -42,8 +42,14 @@
       <div class="col-md-6">
         <p>The class names of the structure of a panel are shown to the right.</p>
         <p>Panel body content is only rendered if the panel is open.</p>
-        <p>The panel, toggle and body all get the `fcp-is-open` class when the panel is open. This is so you can style each piece based on the state of the panel - descendent selectors can get tricky since you can nest panels.</p>
-        <p>Finally, if you want to add padding to the body, target `.fcp-panel-body-inner`. Changing the height of the `.fcp-panel-body` itself will interfere with the animation.</p>
+        <p>
+          The panel, toggle and body all get the <code>fcp-is-open</code> class when the panel is open.
+          This is so you can style each piece based on the state of the panel - descendent selectors can get tricky since you can nest panels.
+        </p>
+        <p>
+          Finally, if you want to add padding to the body, target <code>.fcp-panel-body-inner</code>.
+          Changing the height of the <code>.fcp-panel-body</code> itself will interfere with the animation.
+        </p>
         <p><strong>Sample styling</strong></p>
         <p>Here's the default markup and styling used for the panels in this site:</p>
       </div>
