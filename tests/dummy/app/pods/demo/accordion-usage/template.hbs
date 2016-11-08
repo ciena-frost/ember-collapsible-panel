@@ -10,32 +10,54 @@
   <div class="col-md-6">
 
 {{!-- BEGIN-SNIPPET accordion --}}
-{{#fcp-panels accordion=true as |panels|}}
-  {{#panels.panel as |panel|}}
-    {{#panel.toggle}}
-      <p>Panel A</p>
-    {{/panel.toggle}}
+{{#frost-collapsible-panels
+  accordion=true
+  hook='fcps-accoridan'
+  as |panels|
+}}
+  {{#panels.panel
+    hookQualifiers=(hash index=0)
+    as |panel|
+  }}
+    {{panel.toggle title='Panel A'}}
     {{#panel.body}}
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias! Eius incidunt impedit eaque, est, illo officiis expedita molestiae.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore
+          temporibus delectus earum facere corporis, quam ipsum maxime.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias!
+          Eius incidunt impedit eaque, est, illo officiis expedita molestiae.
+        </p>
       </div>
     {{/panel.body}}
   {{/panels.panel}}
 
-  {{#panels.panel as |panel|}}
-    {{#panel.toggle}}
-      <p>Panel B</p>
-    {{/panel.toggle}}
+  {{#panels.panel
+    hookQualifiers=(hash index=1)
+    as |panel|
+  }}
+    {{panel.toggle title='Panel B'}}
     {{#panel.body}}
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias! Eius incidunt impedit eaque, est, illo officiis expedita molestiae.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore
+          temporibus delectus earum facere corporis, quam ipsum maxime.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias!
+          Eius incidunt impedit eaque, est, illo officiis expedita molestiae.
+        </p>
       </div>
     {{/panel.body}}
 
   {{/panels.panel}}
-{{/fcp-panels}}
+{{/frost-collapsible-panels}}
 {{!-- END-SNIPPET --}}
   </div>
 </div>

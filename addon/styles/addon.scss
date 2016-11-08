@@ -1,3 +1,50 @@
 //
-// Specific styles for the ember-frost-collapsible-panel
+// Specific styles for the ember-frost-collapsible-panel components
 //
+
+$frost-collapsible-panel-toggle-icon-size: 15px !default;
+
+// BEGIN-SNIPPET panel-styles //
+.frost-collapsible-panel {
+  padding-bottom: 20px;
+  border-bottom: 1px solid $frost-color-lgrey-2;
+
+  &.frost-collapsible-panel-is-open {
+    > .frost-collapsible-panel-toggle {
+      color: $frost-color-grey-1;
+
+      .frost-icon {
+        transform: rotate(0deg);
+      }
+    }
+
+  }
+
+  > .frost-collapsible-panel-toggle {
+    display: inline-block;
+    padding-top: 30px;
+    color: $frost-color-grey-3;
+    font-size: $frost-font-l;
+    text-decoration: none;
+
+    .frost-icon {
+      width: $frost-collapsible-panel-toggle-icon-size;
+      height: $frost-collapsible-panel-toggle-icon-size;
+      transform: rotate(-90deg);
+      transition: transform .3s;
+    }
+
+    .subtitle {
+      color: $frost-color-grey-6;
+      font-size: $frost-font-m;
+    }
+  }
+
+  > .frost-collapsible-panel-body {
+    padding-top: 20px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+  }
+}
+// END-SNIPPET //

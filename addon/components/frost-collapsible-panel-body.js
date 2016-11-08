@@ -1,26 +1,38 @@
 /**
- * Component definition for the fcp-panel-body component
+ * Component definition for the frost-collapsible-panel-body component
  */
 
 import Ember from 'ember'
 const {Component} = Ember
 import PropTypesMixin, {PropTypes} from 'ember-prop-types'
 
-import layout from '../templates/components/fcp-panel-body'
+import layout from '../templates/components/frost-collapsible-panel-body'
+import {classes} from 'ember-frost-collapsible-panel/typedefs'
 
 export default Component.extend(PropTypesMixin, {
 
   // == Dependencies ==========================================================
 
-  // == Properties ============================================================
+  // == Ember Keyword Properties ==============================================
+
+  classNameBindings: [`isOpen:${classes.open}`],
+  classNames: [classes.body],
+  layout,
+
+  // == PropTypes =============================================================
 
   propTypes: {
     // public
     isOpen: PropTypes.bool,
+    shouldAnimate: PropTypes.bool.isRequired,
 
-    // private
+    // state
+    classes: PropTypes.object,
+
+    // keywords
     classNames: PropTypes.arrayOf(PropTypes.string),
     classNameBindings: PropTypes.array
+
   },
 
   /**
@@ -28,19 +40,19 @@ export default Component.extend(PropTypesMixin, {
    */
   getDefaultProps () {
     return {
-      // public
+      // options
       isOpen: false,
 
-      // private
-      classNames: ['fcp-panel-body'],
-      classNameBindings: ['isOpen:fcp-is-open'],
-      layout
+      // state
+      classes
     }
   },
 
   // == Computed Properties ===================================================
 
   // == Functions =============================================================
+
+  // == DOM Events ============================================================
 
   // == Lifecycle Hooks =======================================================
 

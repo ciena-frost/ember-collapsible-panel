@@ -1,26 +1,6 @@
 @import 'ember-ted-docs/styles';
-
-/*
-  Sample panel styles
-*/
-/* BEGIN-SNIPPET panel-styles */
-.fcp-panel {
-  border: 1px solid #ddd;
-}
-.fcp-panel-toggle {
-  display: block;
-  padding: 1em;
-}
-.fcp-panel-toggle:link {
-  text-decoration: none;
-}
-.fcp-panel-toggle:hover {
-  background-color: whitesmoke;
-}
-.fcp-panel-body-inner {
-  padding: 1em;
-}
-/* END-SNIPPET */
+@import 'node_modules/ember-frost-core/addon/styles/addon';
+@import 'addon';
 
 /*
   Rest of docs styling
@@ -48,8 +28,6 @@ h3 {
 .code-highlight {
   color: #337ab7;
 }
-
-
 
 .u-margin-top {
   margin-top: 1em;

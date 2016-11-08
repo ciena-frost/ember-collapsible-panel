@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-6">
     <p>Sometimes, you need more control over your panels. If you have many panels, managing each panel's state can get complex.</p>
-    <p>To save you the trouble, we've brought along a <code>panelActions</code> service, which can manage the state of your panels, and gives you a nice API for interacting with them.</p>
+    <p>To save you the trouble, we've brought along a <code>collapsiblePanels</code> service, which can manage the state of your panels, and gives you a nice API for interacting with them.</p>
     <p>Now, other components in your UI can open and close panels without the need for you to pass around actions or manage state. It's like the simplicity of <code>$('.panel').toggle()</code>, without any of the downsides!</p>
     <p>
       {{code-snippet name='programmatic-control.js'}}
@@ -19,31 +19,47 @@
   <button class='btn btn-default' {{action 'togglePanelB'}}>Toggle Panel B</button>
 </div>
 
-{{#fcp-panels name='group1' as |panels|}}
+{{#frost-collapsible-panels
+  hook='fcps-programmatic'
+  name='group1'
+  as |panels|
+}}
 
-  {{#panels.panel name='panelA' as |p|}}
-    {{#p.toggle}}
-      <p>Panel A</p>
-    {{/p.toggle}}
+  {{#panels.panel
+    hookQualifiers=(hash index=0)
+    name='panelA'
+    as |p|
+  }}
+    {{p.toggle title='Panel A'}}
     {{#p.body}}
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque,
+          nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.
+        </p>
       </div>
     {{/p.body}}
   {{/panels.panel}}
 
-  {{#panels.panel name='panelB' as |p|}}
-    {{#p.toggle}}
-      <p>Panel B</p>
-    {{/p.toggle}}
+  {{#panels.panel
+    hookQualifiers=(hash index=0)
+    name='panelB'
+    as |p|
+  }}
+    {{p.toggle title='Panel B'}}
     {{#p.body}}
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque,
+          nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.
+        </p>
       </div>
     {{/p.body}}
   {{/panels.panel}}
 
-{{/fcp-panels}}
+{{/frost-collapsible-panels}}
 {{!-- END-SNIPPET --}}
   </div>
 </div>

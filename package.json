@@ -27,6 +27,9 @@
     "node": ">= 5.0.0"
   },
   "author": "TEDconf and contributors",
+  "contributors": [
+    "Adam Meadows (https://github.com/job13er)"
+  ],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",

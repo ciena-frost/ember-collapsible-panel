@@ -1,0 +1,34 @@
+{{! Template for frost-collapsible-panel-toggle component }}
+{{frost-icon
+  icon='expand-collapse'
+  pack='frost'
+}}
+
+{{#if title}}
+  <span
+    class={{concat classes.toggle '-title'}}
+    data-test={{hook (concat hook '-title')}}
+  >
+    {{title}}
+  </span>
+{{/if}}
+
+{{#if subtitle}}
+  <span
+    class={{concat classes.toggle '-toggle-subtitle'}}
+    data-test={{hook (concat hook '-subtitle')}}
+  >
+    {{subtitle}}
+  </span>
+{{/if}}
+
+{{yield}}
+
+{{#if onRemove}}
+  {{frost-button
+    onClick=onRemove
+    priority='tertiary'
+    size='small'
+    text=removeLabel
+  }}
+{{/if}}

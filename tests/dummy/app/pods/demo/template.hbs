@@ -22,10 +22,6 @@
 
     <div class="Demo-section">{{demo/start-out-open}}</div>
 
-    {{!-- <div class="Demo-section">{{demo/two-way-binding}}</div> --}}
-
-    {{!-- <div class="Demo-section">{{demo/one-way-binding}}</div> --}}
-
     <div class="Demo-section">{{demo/accordion-usage}}</div>
 
     <div class="Demo-section">{{demo/nested-panels}}</div>
@@ -43,12 +39,12 @@
         <p>The class names of the structure of a panel are shown to the right.</p>
         <p>Panel body content is only rendered if the panel is open.</p>
         <p>
-          The panel, toggle and body all get the <code>fcp-is-open</code> class when the panel is open.
+          The panel, toggle and body all get the <code>frost-collapsible-panel-is-open</code> class when the panel is open.
           This is so you can style each piece based on the state of the panel - descendent selectors can get tricky since you can nest panels.
         </p>
         <p>
-          Finally, if you want to add padding to the body, target <code>.fcp-panel-body-inner</code>.
-          Changing the height of the <code>.fcp-panel-body</code> itself will interfere with the animation.
+          Finally, if you want to add padding to the body, target <code>.frost-collapsible-panel-body-inner</code>.
+          Changing the height of the <code>.frost-collapsible-panel-body</code> itself will interfere with the animation.
         </p>
         <p><strong>Sample styling</strong></p>
         <p>Here's the default markup and styling used for the panels in this site:</p>
@@ -58,20 +54,20 @@
       <div class="col-md-6">
 
 <pre>&lt;!-- closed panel --&gt;
-&lt;div class='fcp-panel'&gt;
-  &lt;a href='#' class='fcp-panel-toggle'&gt;
+&lt;div class='frost-collapsible-panel'&gt;
+  &lt;a href='#' class='frost-collapsible-panel-toggle'&gt;
   &lt;/a&gt;
-  &lt;div class='fcp-panel-body'&gt;
+  &lt;div class='frost-collapsible-panel-body'&gt;
     &lt;!-- content is not rendered --&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- open panel --&gt;
-&lt;div class='fcp-panel <span class='code-highlight'>fcp-is-open</span>'&gt;
-  &lt;a href='#' class='fcp-panel-toggle <span class='code-highlight'>fcp-is-open</span>'&gt;
+&lt;div class='frost-collapsible-panel <span class='code-highlight'>frost-collapsible-panel-is-open</span>'&gt;
+  &lt;a href='#' class='frost-collapsible-panel-toggle <span class='code-highlight'>frost-collapsible-panel-is-open</span>'&gt;
   &lt;/a&gt;
-  &lt;div class='fcp-panel-body <span class='code-highlight'>fcp-is-open</span>'&gt;
-    &lt;div class='fcp-panel-body-inner'&gt;
+  &lt;div class='frost-collapsible-panel-body <span class='code-highlight'>frost-collapsible-panel-is-open</span>'&gt;
+    &lt;div class='frost-collapsible-panel-body-inner'&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;

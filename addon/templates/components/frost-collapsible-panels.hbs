@@ -1,0 +1,7 @@
+{{! Template for frost-collapsible-panels component }}
+{{yield (hash
+  panel=(component 'frost-collapsible-panel'
+    group=this
+    hook=(concat hook '-panel')
+  )
+)}}

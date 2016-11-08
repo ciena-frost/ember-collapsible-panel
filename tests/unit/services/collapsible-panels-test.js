@@ -1,5 +1,5 @@
 /**
- * Unit test for panel-actions service
+ * Unit test for collapsible-panels service
  */
 
 import {expect} from 'chai'
@@ -8,7 +8,7 @@ import {beforeEach} from 'mocha'
 
 import {module} from 'dummy/tests/helpers/ember-test-utils/describe-module'
 
-describeModule(...module('service', 'panel-actions'), function () {
+describeModule(...module('service', 'collapsible-panels'), function () {
   let service
 
   beforeEach(function () {
