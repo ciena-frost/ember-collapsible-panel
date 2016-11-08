@@ -1,25 +1,26 @@
 import Ember from 'ember'
+const {Component, inject} = Ember
 
 // BEGIN-SNIPPET programmatic-control
-export default Ember.Component.extend({
+export default Component.extend({
 
-  panelActions: Ember.inject.service(),
+  collapsiblePanels: inject.service(),
 
   actions: {
     expandAll () {
-      this.get('panelActions').openAll('group1')
+      this.get('collapsiblePanels').openAll('group1')
     },
 
     collapseAll () {
-      this.get('panelActions').closeAll('group1')
+      this.get('collapsibePanels').closeAll('group1')
     },
 
     togglePanelA () {
-      this.get('panelActions').toggle('panelA')
+      this.get('collapsibePanels').toggle('panelA')
     },
 
     togglePanelB () {
-      this.get('panelActions').toggle('panelB')
+      this.get('collapsibePanels').toggle('panelB')
     }
   }
 

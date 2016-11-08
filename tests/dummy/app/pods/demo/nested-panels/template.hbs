@@ -10,36 +10,56 @@
   <div class="col-md-6">
 
 {{!-- BEGIN-SNIPPET nested-panels --}}
-{{#fcp-panel as |p|}}
-  {{#p.toggle}}
-    <p>Parent</p>
-  {{/p.toggle}}
+{{#frost-collapsible-panel
+  hook='fcp'
+  as |p|
+}}
+  {{p.toggle title='Parent'}}
   {{#p.body}}
 
-    {{#fcp-panels class='u-margin-bottom' accordion=true as |panels|}}
-      {{#panels.panel as |p|}}
-        {{#p.toggle}}
-          <p>Child 1</p>
-        {{/p.toggle}}
+    {{#frost-collapsible-panels
+      accordion=true
+      class='u-margin-bottom'
+      hook='fcps-nested'
+      as |panels|
+    }}
+      {{#panels.panel
+        hookQualifier=(hash index=0)
+        as |p|
+      }}
+        {{p.toggle title='Child 1'}}
         {{#p.body}}
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate veniam facere consectetur, aperiam nostrum, praesentium nisi. Quae fuga, maiores, hic atque velit, omnis explicabo dolore a quaerat, harum perferendis voluptate.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Cupiditate veniam facere consectetur, aperiam nostrum, praesentium nisi.
+            Quae fuga, maiores, hic atque velit, omnis explicabo dolore a quaerat, harum perferendis voluptate.
+          </p>
         {{/p.body}}
       {{/panels.panel}}
 
-      {{#panels.panel as |p|}}
-        {{#p.toggle}}
-          <p>Child 2</p>
-        {{/p.toggle}}
+      {{#panels.panel
+        hookQualifier=(hash index=1)
+        as |p|
+      }}
+        {{p.toggle title='Child 2'}}
         {{#p.body}}
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate veniam facere consectetur, aperiam nostrum, praesentium nisi. Quae fuga, maiores, hic atque velit, omnis explicabo dolore a quaerat, harum perferendis voluptate.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Cupiditate veniam facere consectetur, aperiam nostrum, praesentium nisi.
+            Quae fuga, maiores, hic atque velit, omnis explicabo dolore a quaerat, harum perferendis voluptate.
+          </p>
         {{/p.body}}
       {{/panels.panel}}
-    {{/fcp-panels}}
+    {{/frost-collapsible-panels}}
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat error enim, quae pariatur atque possimus aliquam, beatae saepe veritatis natus alias nostrum! Atque aliquid, fugit esse dolor ducimus. Ab, labore.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Cupiditate veniam facere consectetur, aperiam nostrum, praesentium nisi.
+      Quae fuga, maiores, hic atque velit, omnis explicabo dolore a quaerat, harum perferendis voluptate.
+    </p>
 
   {{/p.body}}
-{{/fcp-panel}}
+{{/frost-collapsible-panel}}
 {{!-- END-SNIPPET --}}
   </div>
 </div>

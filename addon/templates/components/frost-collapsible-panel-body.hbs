@@ -1,0 +1,21 @@
+{{! Template for frost-collapsible-panel-body component }}
+{{#if shouldAnimate}}
+  {{#liquid-if isOpen use='crossFade'}}
+    <div
+      class={{concat classes.body '-inner'}}
+      data-test={{hook (concat hook '-inner')}}
+    >
+      {{yield}}
+    </div>
+  {{/liquid-if}}
+
+{{else}}
+  {{#if isOpen}}
+    <div
+      class={{concat classes.body '-inner'}}
+      data-test={{hook (concat hook '-inner')}}
+    >
+      {{yield}}
+    </div>
+  {{/if}}
+{{/if}}

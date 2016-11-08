@@ -15,7 +15,13 @@ module.exports = function (defaults) {
         'addon/styles'
       ]
     },
-    snippetSearchPaths: ['app', 'tests']
+    snippetPaths: [
+      'code-snippets'
+    ],
+    snippetSearchPaths: [
+      'tests/dummy',
+      'addon'
+    ]
   })
 
   /*

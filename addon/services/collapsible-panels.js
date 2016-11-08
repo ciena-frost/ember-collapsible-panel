@@ -1,5 +1,5 @@
 /**
- * panel-actions service
+ * collapsible-panels service
  */
 import Ember from 'ember'
 const {Service} = Ember

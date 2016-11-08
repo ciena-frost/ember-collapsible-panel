@@ -13,23 +13,24 @@ import {afterEach, beforeEach, describe} from 'mocha'
 import sinon from 'sinon'
 
 import {integration} from 'dummy/tests/helpers/ember-test-utils/describe-component'
+import {classes} from 'ember-frost-collapsible-panel/typedefs'
 
 $.Velocity.mock = true // fast animations
 
-describeComponent(...integration('fcp-panels'), function () {
-  let sandbox, panelActions
+describeComponent(...integration(classes.panels), function () {
+  let sandbox, collapsiblePanels
 
   beforeEach(function () {
     sandbox = sinon.sandbox.create()
-    panelActions = getOwner(this).lookup('service:panel-actions')
+    collapsiblePanels = getOwner(this).lookup('service:collapsible-panels')
     initializeHook()
   })
 
   afterEach(function () {
     sandbox.restore()
-    // FIXME: figure out why the panelActions.get('sate') is sometimes null
-    if (panelActions.get('state')) {
-      panelActions.get('state').reset()
+    // FIXME: figure out why the collapsiblePanels.get('sate') is sometimes null
+    if (collapsiblePanels.get('state')) {
+      collapsiblePanels.get('state').reset()
     }
   })
 
@@ -41,7 +42,7 @@ describeComponent(...integration('fcp-panels'), function () {
       })
 
       this.render(hbs`
-        {{#fcp-panels accordion=true as |panels|}}
+        {{#frost-collapsible-panels accordion=true as |panels|}}
           {{#panels.panel as |panel|}}
             {{panel.toggle}}
             {{#panel.body}}Panel A{{/panel.body}}
@@ -50,49 +51,49 @@ describeComponent(...integration('fcp-panels'), function () {
             {{panel.toggle}}
             {{#panel.body}}Panel B{{/panel.body}}
           {{/panels.panel}}
-        {{/fcp-panels}}
+        {{/frost-collapsible-panels}}
       `)
 
       return wait().then(() => {
-        $panel1 = this.$('.fcp-panel:nth-child(1)')
-        $panel2 = this.$('.fcp-panel:nth-child(2)')
+        $panel1 = this.$(`.${classes.panel}:nth-child(1)`)
+        $panel2 = this.$(`.${classes.panel}:nth-child(2)`)
       })
     })
 
     it('should start out with first section closed', function () {
-      expect($panel1).to.have.class('fcp-is-closed')
+      expect($panel1).to.have.class(classes.closed)
     })
 
     it('should start out with second section closed', function () {
-      expect($panel2).to.have.class('fcp-is-closed')
+      expect($panel2).to.have.class(classes.closed)
     })
 
     describe('after clicking first toggle', function () {
       beforeEach(function () {
-        $panel1.find('.fcp-panel-toggle').click()
+        $panel1.find(`.${classes.toggle}`).click()
         return wait()
       })
 
       it('should open the first section', function () {
-        expect($panel1).to.have.class('fcp-is-open')
+        expect($panel1).to.have.class(classes.open)
       })
 
       it('should leave the second section closed', function () {
-        expect($panel2).to.have.class('fcp-is-closed')
+        expect($panel2).to.have.class(classes.closed)
       })
 
       describe('after clicking second toggle', function () {
         beforeEach(function () {
-          $panel2.find('.fcp-panel-toggle').click()
+          $panel2.find(`.${classes.toggle}`).click()
           return wait()
         })
 
         it('should close the first section', function () {
-          expect($panel1).to.have.class('fcp-is-closed')
+          expect($panel1).to.have.class(classes.closed)
         })
 
         it('should open the second section', function () {
-          expect($panel2).to.have.class('fcp-is-open')
+          expect($panel2).to.have.class(classes.open)
         })
       })
     })
@@ -102,42 +103,42 @@ describeComponent(...integration('fcp-panels'), function () {
     let $panel1, $panel2
     beforeEach(function () {
       this.render(hbs`
-        {{#fcp-panels name='a-group-of-panels' as |panels|}}
+        {{#frost-collapsible-panels name='a-group-of-panels' as |panels|}}
           {{#panels.panel as |panel|}}
             {{#panel.body}}Panel A{{/panel.body}}
           {{/panels.panel}}
           {{#panels.panel as |panel|}}
             {{#panel.body}}Panel B{{/panel.body}}
           {{/panels.panel}}
-        {{/fcp-panels}}
+        {{/frost-collapsible-panels}}
       `)
 
       return wait().then(() => {
-        $panel1 = this.$('.fcp-panel:nth-child(1)')
-        $panel2 = this.$('.fcp-panel:nth-child(2)')
+        $panel1 = this.$(`.${classes.panel}:nth-child(1)`)
+        $panel2 = this.$(`.${classes.panel}:nth-child(2)`)
       })
     })
 
     it('should start with first panel closed', function () {
-      expect($panel1).to.have.class('fcp-is-closed')
+      expect($panel1).to.have.class(classes.closed)
     })
 
     it('should start with second panel closed', function () {
-      expect($panel2).to.have.class('fcp-is-closed')
+      expect($panel2).to.have.class(classes.closed)
     })
 
     describe('when group is opened', function () {
       beforeEach(function () {
-        panelActions.openAll('a-group-of-panels')
+        collapsiblePanels.openAll('a-group-of-panels')
         return wait()
       })
 
       it('should open the first panel', function () {
-        expect($panel1).to.have.class('fcp-is-open')
+        expect($panel1).to.have.class(classes.open)
       })
 
       it('should open the second panel', function () {
-        expect($panel2).to.have.class('fcp-is-open')
+        expect($panel2).to.have.class(classes.open)
       })
     })
   })

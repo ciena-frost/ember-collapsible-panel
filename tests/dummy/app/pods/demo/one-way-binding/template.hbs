@@ -15,18 +15,29 @@
 
 <span>isOpen: {{isOpen}}</span>
 
-{{#fcp-panel click=(action 'toggleIsOpen') open=isOpen as |p|}}
-  {{#p.toggle}}
-    <p>Click me!</p>
-  {{/p.toggle}}
+{{#frost-collapsible-panel
+  click=(action 'toggleIsOpen')
+  hook='fcp-binding'
+  open=isOpen
+  as |p|
+}}
+  {{p.toggle title='Click me!'}}
   {{#p.body}}
     <div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias! Eius incidunt impedit eaque, est, illo officiis expedita molestiae.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus
+        delectus earum facere corporis, quam ipsum maxime.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias!
+        Eius incidunt impedit eaque, est, illo officiis expedita molestiae.
+      </p>
     </div>
   {{/p.body}}
 
-{{/fcp-panel}}
+{{/frost-collapsible-panel}}
 {{!-- END-SNIPPET --}}
   </div>
 </div>

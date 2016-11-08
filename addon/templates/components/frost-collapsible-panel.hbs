@@ -1,0 +1,13 @@
+{{! Template for frost-collapsible-panel component }}
+{{yield (hash
+  toggle=(component 'frost-collapsible-panel-toggle'
+    hook=(concat hook '-toggle')
+    isOpen=isOpen
+    onClick=(action 'toggleIsOpen')
+  )
+  body=(component 'frost-collapsible-panel-body'
+    hook=(concat hook '-body')
+    isOpen=isOpen
+    shouldAnimate=shouldAnimate
+  )
+)}}
