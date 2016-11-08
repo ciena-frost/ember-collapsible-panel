@@ -1,9 +1,9 @@
-[ci-img]: https://img.shields.io/travis/ciena-frost/eslint-config-frost-standard.svg "Travis CI Build Status"
-[ci-url]: https://travis-ci.org/ciena-frost/eslint-config-frost-standard
-[cov-img]: https://img.shields.io/coveralls/ciena-frost/eslint-config-frost-standard.svg "Coveralls Code Coverage"
-[cov-url]: https://coveralls.io/github/ciena-frost/eslint-config-frost-standard
-[npm-img]: https://img.shields.io/npm/v/eslint-config-frost-standard.svg "NPM Version"
-[npm-url]: https://www.npmjs.com/package/eslint-config-frost-standard
+[ci-img]: https://img.shields.io/travis/ciena-frost/ember-frost-collapsible-panel.svg "Travis CI Build Status"
+[ci-url]: https://travis-ci.org/ciena-frost/ember-frost-collapsible-panel
+[cov-img]: https://img.shields.io/coveralls/ciena-frost/ember-frost-collapsible-panel.svg "Coveralls Code Coverage"
+[cov-url]: https://coveralls.io/github/ciena-frost/ember-frost-collapsible-panel
+[npm-img]: https://img.shields.io/npm/v/ember-frost-collapsible-panel.svg "NPM Version"
+[npm-url]: https://www.npmjs.com/package/ember-frost-collapsible-panel
 
 # ember-frost-collapsible-panel <br /> [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
