@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Ember from 'ember'
 
 // BEGIN-SNIPPET programmatic-control
 export default Ember.Component.extend({
@@ -6,22 +6,22 @@ export default Ember.Component.extend({
   panelActions: Ember.inject.service(),
 
   actions: {
-    expandAll() {
-      this.get('panelActions').openAll('group1');
+    expandAll () {
+      this.get('panelActions').openAll('group1')
     },
 
-    collapseAll() {
-      this.get('panelActions').closeAll('group1');
+    collapseAll () {
+      this.get('panelActions').closeAll('group1')
     },
 
-    togglePanelA() {
-      this.get('panelActions').toggle('panelA');
+    togglePanelA () {
+      this.get('panelActions').toggle('panelA')
     },
 
-    togglePanelB() {
-      this.get('panelActions').toggle('panelB');
-    },
+    togglePanelB () {
+      this.get('panelActions').toggle('panelB')
+    }
   }
 
-});
+})
 // END-SNIPPET

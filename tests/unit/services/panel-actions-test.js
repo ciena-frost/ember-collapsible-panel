@@ -1,12 +1,22 @@
-import { moduleFor, test } from 'ember-qunit';
+/**
+ * Unit test for panel-actions service
+ */
 
-moduleFor('service:panel-actions', 'Unit | Service | panel actions', {
-  // Specify the other units that are required for this test.
-  // needs: ['service:foo']
-});
+import {expect} from 'chai'
+import {describeModule, it} from 'ember-mocha'
+import {beforeEach} from 'mocha'
 
-// Replace this with your real tests.
-test('it exists', function(assert) {
-  var service = this.subject();
-  assert.ok(service);
-});
+import {module} from 'dummy/tests/helpers/ember-test-utils/describe-module'
+
+describeModule(...module('service', 'panel-actions'), function () {
+  let service
+
+  beforeEach(function () {
+    service = this.subject()
+  })
+
+  // Replace this with your real tests.
+  it('should exist', function () {
+    expect(service).not.to.equal(undefined)
+  })
+})

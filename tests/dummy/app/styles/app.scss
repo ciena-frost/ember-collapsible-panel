@@ -4,20 +4,20 @@
   Sample panel styles
 */
 /* BEGIN-SNIPPET panel-styles */
-.cp-Panel {
+.fcp-panel {
   border: 1px solid #ddd;
 }
-.cp-Panel-toggle {
+.fcp-panel-toggle {
   display: block;
   padding: 1em;
 }
-.cp-Panel-toggle:link {
+.fcp-panel-toggle:link {
   text-decoration: none;
 }
-.cp-Panel-toggle:hover {
+.fcp-panel-toggle:hover {
   background-color: whitesmoke;
 }
-.cp-Panel-body-inner {
+.fcp-panel-body-inner {
   padding: 1em;
 }
 /* END-SNIPPET */

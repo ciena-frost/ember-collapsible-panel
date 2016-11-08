@@ -1,0 +1,5 @@
+{{! Template for fcp-panel component }}
+{{yield (hash
+  toggle=(component 'fcp-panel-toggle' onClick=(action 'toggleIsOpen') isOpen=isOpen)
+  body=(component 'fcp-panel-body' shouldAnimate=shouldAnimate isOpen=isOpen)
+)}}
