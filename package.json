@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-collapsible-panel",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Frost themed custom fork of ember-collapsible-panel",
   "directories": {
     "doc": "doc",

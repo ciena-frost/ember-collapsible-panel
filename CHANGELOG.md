@@ -1,3 +1,10 @@
+# 2.0.1
+
+* **Updated** `CHANGELOG` and `package.json` manually due to failed builds (old tags from the forked project hanging around)
+* **Updated** travis-ci config to use `ember-try`
+
+
+
 # 2.0.0
 ## Breaking changes
  * **Renamed** the components to `frost-collapsible-panel`, `frost-collapsible-panels`, `frost-collapsible-panel-toggle`, and `frost-collapsible-panel-body` respectively.
