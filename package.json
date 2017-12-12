@@ -2,6 +2,15 @@
   "name": "ember-frost-collapsible-panel",
   "version": "2.0.1",
   "description": "Frost themed custom fork of ember-collapsible-panel",
+  "keywords": [
+    "ember-addon",
+    "frost"
+  ],
+  "license": "MIT",
+  "author": "TEDconf and contributors",
+  "contributors": [
+    "Adam Meadows (https://github.com/job13er)"
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -23,19 +32,16 @@
     "url": "https://github.com/ciena-frost/ember-frost-collapsible-panel/issues"
   },
   "homepage": "https://ciena-frost.github.io/ember-frost-collapsible-panel/",
-  "engines": {
-    "node": ">= 5.0.0"
+  "dependencies": {
+    "ember-cli-babel": "^5.1.7",
+    "ember-cli-version-checker": "^1.1.6",
+    "ember-cli-htmlbars": "^1.0.10"
   },
-  "author": "TEDconf and contributors",
-  "contributors": [
-    "Adam Meadows (https://github.com/job13er)"
-  ],
-  "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
     "ember-browserify": "1.1.13",
-    "ember-cli": "2.9.0",
+    "ember-cli": "2.10.1",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-dependency-checker": "^1.3.0",
     "ember-cli-github-pages": "0.0.6",
@@ -72,14 +78,8 @@
     "sass-lint": "^1.10.1",
     "svg4everybody": "2.1.0"
   },
-  "keywords": [
-    "ember-addon",
-    "frost"
-  ],
-  "dependencies": {
-    "ember-cli-babel": "^5.1.7",
-    "ember-cli-version-checker": "^1.1.6",
-    "ember-cli-htmlbars": "^1.0.10"
+  "engines": {
+    "node": ">= 5.0.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
