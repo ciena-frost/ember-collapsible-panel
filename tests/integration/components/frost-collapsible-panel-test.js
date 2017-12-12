@@ -4,7 +4,7 @@
 
 import {expect} from 'chai'
 import Ember from 'ember'
-const {$, getOwner} = Ember
+const {getOwner} = Ember
 import {describeComponent, it} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
 import {initialize as initializeHook} from 'ember-hook'
@@ -15,7 +15,9 @@ import sinon from 'sinon'
 import {integration} from 'dummy/tests/helpers/ember-test-utils/describe-component'
 import {classes} from 'ember-frost-collapsible-panel/typedefs'
 
-$.Velocity.mock = true // fast animations
+import Velocity from 'velocity'
+
+Velocity.mock = true // fast animations
 
 describeComponent(...integration(classes.panel), function () {
   let sandbox, collapsiblePanels
